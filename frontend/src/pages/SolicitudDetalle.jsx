@@ -48,7 +48,11 @@ export default function SolicitudDetalle() {
     } catch (err) { toast.error(err.message) }
   }
 
-  const descargar = () => window.open(`/api/solicitudes/${id}/descargar`, '_blank')
+const descargar = () =>
+  window.open(
+    `${import.meta.env.VITE_API_URL}/solicitudes/${id}/descargar`,
+    '_blank'
+  )
 
   if (loading) return (
     <div className="flex justify-center py-32">
